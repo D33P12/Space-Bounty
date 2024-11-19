@@ -1,0 +1,23 @@
+Space Bounty 
+GDD
+
+Base controller : wasd, mouse delta, Lshift
+Objective: hunt and destroy bounty (in space)
+
+might create a range in which obstacle will spawn
+need to figure out how to create nav mesh trail for enemy ai
+going to use state machine for ai (ill try)
+abstract would be good for collectables (refuel and points)
+after moving in a specific direction for some time will spawn bounty and pirate gaurds around it (random)
+might create different hitboxes for player damage 
+
+collectables : for now its a cube
+
+could create a black hole (i could make a collider for range and when the player is in the collider it will disable the input and 
+would pull the player at a the center(empty game object) then game over 
+
+for wrap points( i could use two points for transform position of player from 1 to another add effects to it (time wrap)
+
+yeah i am gonna cut alot of things from this gdd
+
+ 
