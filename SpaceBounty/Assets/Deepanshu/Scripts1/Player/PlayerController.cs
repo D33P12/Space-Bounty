@@ -1,7 +1,8 @@
-using System;
 using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] 
+    PlayerMovementInput _playerMovementInput;
     [SerializeField] [Range(1000f, 10000f)]
     float _thrustForce = 7500,
           _pitchForce = 6000,
@@ -13,9 +14,18 @@ public class PlayerController : MonoBehaviour
                  ,_pitchAmount
                  ,_rollAmount
                  ,_yawAmount;
+    IMovement ControlInput => _playerMovementInput.MovementControls;
     private void Awake()
     {
       _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        _thrustAmount = ControlInput.ThrustAmount;
+        _rollAmount = ControlInput.RollAmount;
+        _yawAmount = ControlInput.YawAmount;
+        _pitchAmount = ControlInput.PitchAmount;
     }
     private void FixedUpdate()
     {
