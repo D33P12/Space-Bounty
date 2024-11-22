@@ -1,9 +1,7 @@
 using UnityEngine;
-
-[SerializeField]
 public class MovementControls : MovementBaseControl
 {
-    [SerializeField] float _deadZoneRadius = 0.1f;
+    public float _deadZoneRadius = 0.1f;
     Vector2 ScreenMid => new Vector2(Screen.width*0.5f, Screen.height*0.5f);
     public override float YawAmount
     {
