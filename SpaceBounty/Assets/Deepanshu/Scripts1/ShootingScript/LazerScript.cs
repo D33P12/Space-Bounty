@@ -30,8 +30,11 @@ public class LazerScript : MonoBehaviour
    {
       if (OutOfPower) Destroy(gameObject);
    }
-   void onCollisionEnter(Collision collision)
+   private void OnTriggerEnter(Collider other)
    {
-     
+      if (other.TryGetComponent<InteractionFoundation>(out var interactableFoundation))
+      {
+         interactableFoundation.Interact(GameManager.Instance);
+      }
    }
 }
