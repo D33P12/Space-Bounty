@@ -1,6 +1,7 @@
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
+ private int totalScrap = 0;
  private void Awake()
  {
   if (Instance == null)
@@ -32,7 +33,17 @@ public class GameManager : MonoBehaviour
   Debug.Log($"Health: {Health}");
   if (Health <= 0)
   {
-   Debug.Log("Player has died.");
+   PlayerDeath();
   }
  }
+ private void PlayerDeath()
+ {
+  Debug.Log("Player has died.");
+ }
+ public void AddScrap(int amount)
+ {
+  totalScrap += amount;
+  
+ }
+ 
 }

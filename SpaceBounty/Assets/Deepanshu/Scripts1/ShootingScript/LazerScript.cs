@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
-public class LazerScript : MonoBehaviour
+public class LazerScript : MonoBehaviour 
 {
    [SerializeField] [Range(1000f, 20000f)]
    float speed = 10000f;
    [SerializeField]
    int _damage = 10;
    [SerializeField]
-   float _range = 5f;
+   float _range = 3f;
    private Rigidbody _rigidbody;
    private float _duration;
    bool OutOfPower
@@ -34,7 +35,16 @@ public class LazerScript : MonoBehaviour
    {
       if (other.TryGetComponent<InteractionFoundation>(out var interactableFoundation))
       {
-         interactableFoundation.Interact(GameManager.Instance);
+         if (GameManager.Instance != null)
+         {
+            interactableFoundation.Interact(GameManager.Instance);
+         }
+      }
+      
+      if (other.GetComponent<Scrap>() != null)
+      {
+         Destroy(gameObject); 
+         Destroy(other.gameObject);
       }
    }
 }
