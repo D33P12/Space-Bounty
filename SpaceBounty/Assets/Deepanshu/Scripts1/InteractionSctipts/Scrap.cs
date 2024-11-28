@@ -2,18 +2,26 @@ using UnityEngine;
 
 public class Scrap : InteractionFoundation
 {
-    [SerializeField] private int scrapValue = 1;
+    [SerializeField]
+    private int scrapValue = 1;
     public System.Action OnScrapCollected;
-    
     enum ColorList
     {
         Red,
         Green,
     }
-    [SerializeField] private Renderer objectRenderer;
-    [SerializeField] private Color[] colorList;
-    [SerializeField] private float minInterval = 1f;
-    [SerializeField] private float maxInterval = 3f;
+    [SerializeField] 
+    private Renderer objectRenderer;
+    [SerializeField]
+    private Color[] colorList;
+    [SerializeField]
+    private float minInterval = 1f;
+    [SerializeField]
+    private float maxInterval = 3f;
+    [SerializeField]
+    private GameObject greenRespawnPrefab;
+  //  [SerializeField] private float minDistanceFromOtherObjects = 2f;
+    
     public int healthIncrease = 10;
     public int damage = 15;
     
@@ -64,9 +72,9 @@ public class Scrap : InteractionFoundation
             }
             else if (currentColor == colorList[(int)ColorList.Green])
             {
-                gameManager.IncreaseHealth(healthIncrease);
+                Instantiate(greenRespawnPrefab, transform.position, Quaternion.identity);
             }
-            gameManager.AddScrap(scrapValue);
+            
             OnScrapCollected?.Invoke();
             Destroy(gameObject);
         }

@@ -128,5 +128,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.12074661, a: 0}
   minInterval: 1
   maxInterval: 3
+  greenRespawnPrefab: {fileID: 3795649180960080094, guid: 2060f80fa38d21f4692e87d77f1b3e16, type: 3}
   healthIncrease: 10
   damage: 15

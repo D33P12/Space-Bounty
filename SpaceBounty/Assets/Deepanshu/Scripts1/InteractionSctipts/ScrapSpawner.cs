@@ -3,19 +3,18 @@ using UnityEngine;
 
 public class ScrapSpawner : MonoBehaviour
 {
-    [SerializeField]
+  [SerializeField]
     private List<GameObject> spawnableItems;
     [SerializeField]
     private List<Transform> spawnPoints;
     [SerializeField]
-    private int maxSpawnCount = 5;
+    private int maxSpawnCount = 5; 
     [SerializeField]
-    private float minDistanceBetweenItems = 2f;
-    private List<GameObject> activeItems = new List<GameObject>(); 
+    private float minDistanceBetweenItems = 2f; 
 
+    private List<GameObject> activeItems = new List<GameObject>(); 
     private void Start()
     {
-        
         foreach (var spawnPoint in spawnPoints)
         {
             SpawnItemAt(spawnPoint);
@@ -25,6 +24,7 @@ public class ScrapSpawner : MonoBehaviour
     {
         if (activeItems.Count >= maxSpawnCount)
         {
+            Debug.Log("Max spawn count reached. Skipping spawn.");
             return;
         }
         if (IsPositionClear(spawnPoint.position))
@@ -33,10 +33,12 @@ public class ScrapSpawner : MonoBehaviour
             GameObject newItem = Instantiate(itemToSpawn, spawnPoint.position, Quaternion.identity);
 
             activeItems.Add(newItem);
+            Debug.Log("Spawned new item: " + newItem.name);
+
             Scrap scrap = newItem.GetComponent<Scrap>();
             if (scrap != null)
             {
-                scrap.OnScrapCollected += () => HandleItemDestroyed(newItem, spawnPoint); 
+                scrap.OnScrapCollected += () => HandleItemDestroyed(newItem, spawnPoint);
             }
         }
     }
@@ -54,6 +56,7 @@ public class ScrapSpawner : MonoBehaviour
     }
     private void HandleItemDestroyed(GameObject item, Transform spawnPoint)
     {
+        Debug.Log("Item destroyed: " + item.name);
         activeItems.Remove(item);
         Destroy(item);
         SpawnItemAt(spawnPoint);
