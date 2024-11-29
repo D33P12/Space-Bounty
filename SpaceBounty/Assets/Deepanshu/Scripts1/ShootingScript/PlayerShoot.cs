@@ -22,6 +22,7 @@ public class PlayerShoot : MonoBehaviour
         if (ShootReady && Input.GetMouseButtonDown(0))
         {
             FireLazer();
+            AudioManagerScript.Instance.PlayAudio(AudioManagerScript.AudioType.Laser, 0.5f);
         }
     }
     void FireLazer()

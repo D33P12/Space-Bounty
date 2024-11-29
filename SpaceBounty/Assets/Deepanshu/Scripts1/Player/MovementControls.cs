@@ -47,6 +47,7 @@ public class MovementControls : MovementBaseControl
             if (Input.GetKey(KeyCode.D))
             {
                 return -1f;
+                
             }
             else
             {

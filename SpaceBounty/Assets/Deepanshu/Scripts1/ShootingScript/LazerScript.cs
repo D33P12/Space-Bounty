@@ -45,6 +45,7 @@ public class LazerScript : MonoBehaviour
       {
          Destroy(gameObject); 
          Destroy(other.gameObject);
+         AudioManagerScript.Instance.PlayAudio(AudioManagerScript.AudioType.D1, 0.5f);
       }
    }
 }

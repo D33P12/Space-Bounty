@@ -3,7 +3,8 @@ public class AudioManagerScript : MonoBehaviour
 {
     public enum AudioType
     {
-   
+      BG,Laser,MovementS,D1,D2,
+     
     }
     public static AudioManagerScript Instance { get; private set; }
 
@@ -40,13 +41,22 @@ public class AudioManagerScript : MonoBehaviour
 
     public void PlayAudioContinuous(AudioType sound, float volume = 0.5f)
     {
-        if (audioList.Length > (int)sound && audioList[(int)sound] != null)
+        if (audioList == null || audioList.Length <= (int)sound || audioList[(int)sound] == null)
         {
-            audioSource.clip = audioList[(int)sound];
-            audioSource.loop = true;
-            audioSource.volume = volume;
-            audioSource.Play();
+            Debug.LogError($"Audio clip for {sound} is missing or not assigned.");
+            return;
         }
+
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource is not initialized.");
+            return;
+        }
+
+        audioSource.clip = audioList[(int)sound];
+        audioSource.loop = true;
+        audioSource.volume = volume;
+        audioSource.Play();
     }
     public void StopPlaying()
     {

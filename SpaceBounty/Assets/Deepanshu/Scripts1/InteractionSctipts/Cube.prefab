@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectRenderer: {fileID: 0}
   colorList:
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 0.035300493, g: 1, b: 0, a: 0}
+  - {r: 0.5411765, g: 0.78039217, b: 0.023529412, a: 0}
+  - {r: 1, g: 0.7176471, b: 0.32156864, a: 0}
   minInterval: 1
   maxInterval: 2
   greenRespawnPrefab: {fileID: 3795649180960080094, guid: 2060f80fa38d21f4692e87d77f1b3e16, type: 3}

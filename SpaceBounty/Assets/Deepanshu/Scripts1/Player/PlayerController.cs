@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     {
       _rigidbody = GetComponent<Rigidbody>();
     }
+
+
     void Update()
     {
         _thrustAmount = ControlInput.ThrustAmount;
@@ -27,7 +30,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {
             _thrustAmount *= thrustMultiplier;
-
+            AudioManagerScript.Instance.PlayAudio(AudioManagerScript.AudioType.MovementS, 0.5f);
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.DecreaseHealth(healthReduction);
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if (!Mathf.Approximately(0f, _rollAmount))
         {
             _rigidbody.AddTorque(transform.right *(_rollForce * _rollAmount * Time.fixedDeltaTime));
+
         }
         if (!Mathf.Approximately(0f, _yawAmount))
         {

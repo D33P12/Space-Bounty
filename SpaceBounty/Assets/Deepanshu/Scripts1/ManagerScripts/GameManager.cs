@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+     
         InitializeHealthUI();
         gameOverCanvas?.SetActive(false);
         LockCursor();
