@@ -47,6 +47,17 @@ public class Scrap : InteractionFoundation
         {
             objectMaterial.color = color;
         }
+        foreach (Transform child in transform)
+        {
+            if (child.TryGetComponent<Renderer>(out Renderer childRenderer))
+            {
+                Material childMaterial = childRenderer.material;
+                if (childMaterial != null)
+                {
+                    childMaterial.color = color;
+                }
+            }
+        }
     }
     private Color GetRandomColor()
     {

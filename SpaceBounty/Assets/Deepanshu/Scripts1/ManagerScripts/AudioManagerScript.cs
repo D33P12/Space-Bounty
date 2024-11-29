@@ -3,8 +3,7 @@ public class AudioManagerScript : MonoBehaviour
 {
     public enum AudioType
     {
-      BG,Laser,MovementS,D1,D2,
-     
+      Laser,MovementS,D1
     }
     public static AudioManagerScript Instance { get; private set; }
 
