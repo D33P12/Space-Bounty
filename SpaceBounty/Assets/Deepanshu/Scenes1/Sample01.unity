@@ -10074,6 +10074,34 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 933
       objectReference: {fileID: 0}
+    - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
+      propertyPath: _YawForce
+      value: 1587
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
+      propertyPath: _yawAmount
+      value: -0.504
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
+      propertyPath: _pitchForce
+      value: 3661
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
+      propertyPath: _rollAmount
+      value: -0.809
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
+      propertyPath: _pitchAmount
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
+      propertyPath: _thrustForce
+      value: 4717
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
+      propertyPath: _thrustAmount
+      value: -0.417
+      objectReference: {fileID: 0}
     - target: {fileID: 3012695462987770317, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
