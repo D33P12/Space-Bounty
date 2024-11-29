@@ -10076,15 +10076,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
       propertyPath: _YawForce
-      value: 1587
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
       propertyPath: _yawAmount
-      value: -0.504
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
       propertyPath: _pitchForce
-      value: 3661
+      value: 1700
       objectReference: {fileID: 0}
     - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
       propertyPath: _rollAmount
@@ -10096,7 +10096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
       propertyPath: _thrustForce
-      value: 4717
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3007620397017136491, guid: c92877c9b475d244f8c05a5c7c9c408b, type: 3}
       propertyPath: _thrustAmount
