@@ -20,19 +20,14 @@ public class ScrapSpawner : MonoBehaviour
     {
         if (activeItems.Count >= maxSpawnCount)
         {
-            Debug.Log("Max spawn count reached. Skipping spawn.");
             return;
         }
         if (IsPositionClear(spawnPoint.position))
         {
             GameObject itemToSpawn = spawnableItems[Random.Range(0, spawnableItems.Count)];
             GameObject newItem = Instantiate(itemToSpawn, spawnPoint.position, Quaternion.identity);
-
             activeItems.Add(newItem);
-            Debug.Log($"Spawned new item: {newItem.name}");
-
             navScript?.RegisterPrefabSpawn(newItem);
-
             Scrap scrap = newItem.GetComponent<Scrap>();
             if (scrap != null)
             {
@@ -54,7 +49,6 @@ public class ScrapSpawner : MonoBehaviour
     }
     private void HandleItemDestroyed(GameObject item, Transform spawnPoint)
     {
-        Debug.Log($"Item destroyed: {item.name}");
         activeItems.Remove(item);
         navScript?.UnregisterPrefab(item);
         Destroy(item);

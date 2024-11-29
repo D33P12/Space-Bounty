@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Scrap : InteractionFoundation
 {
-    [SerializeField]
-    private int scrapValue = 1;
     public System.Action OnScrapCollected;
     enum ColorList
     {
@@ -20,7 +18,6 @@ public class Scrap : InteractionFoundation
     private float maxInterval = 3f;
     [SerializeField]
     private GameObject greenRespawnPrefab;
-  //  [SerializeField] private float minDistanceFromOtherObjects = 2f;
     
     public int healthIncrease = 10;
     public int damage = 15;
