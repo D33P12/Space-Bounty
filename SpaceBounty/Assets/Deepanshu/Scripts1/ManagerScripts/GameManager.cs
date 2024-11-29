@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
  {
   if (healthSlider != null)
   {
-   healthSlider.maxValue = 100; 
+   healthSlider.maxValue = 500; 
    healthSlider.minValue = 0;  
    healthSlider.value = Health; 
   }
@@ -70,13 +70,13 @@ public class GameManager : MonoBehaviour
   }
  }
  public static GameManager Instance { get; private set; }
- public int Health { get; private set; } = 100;
+ public int Health { get; private set; } = 500;
 
  public void IncreaseHealth(int amount)
  {
   Health += amount;
   UpdateHealthUI();
-  if (Health > 100) Health = 100;
+  if (Health > 500) Health = 500;
   Debug.Log($"Health: {Health}");
  }
  public void DecreaseHealth(int amount)
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
  }
  public void RestartGame()
  {
-  Health = 100;
+  Health = 500;
   UpdateHealthUI();
   if (gameOverCanvas != null)
   {

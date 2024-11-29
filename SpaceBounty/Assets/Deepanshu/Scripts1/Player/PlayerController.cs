@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField][Range(-1f,1f)]
     private float _thrustAmount,_pitchAmount,_rollAmount,_yawAmount;
     
+    [SerializeField]
+    private float thrustMultiplier = 3f; 
+    [SerializeField]
+    private int healthReduction = 2;
     IMovement ControlInput => _playerMovementInput.MovementControls;
     private void Awake()
     {
@@ -20,6 +24,15 @@ public class PlayerController : MonoBehaviour
         _rollAmount = ControlInput.RollAmount;
         _yawAmount = ControlInput.YawAmount;
         _pitchAmount = ControlInput.PitchAmount;
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
+        {
+            _thrustAmount *= thrustMultiplier;
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.DecreaseHealth(healthReduction);
+            }
+        }
     }
     private void FixedUpdate()
     {

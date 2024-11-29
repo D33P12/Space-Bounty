@@ -43,7 +43,7 @@ public class MovementControls : MovementBaseControl
             {
                 return 1f;
             }
-            
+
             if (Input.GetKey(KeyCode.D))
             {
                 return -1f;
