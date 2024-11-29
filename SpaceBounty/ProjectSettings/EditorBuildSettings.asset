@@ -9,11 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/main menu.unity
     guid: 0e39fbc7f697c2541a81d8eb9f0cf6c8
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Sayed/scenes2/TestSample.unity
-    guid: 00200650082caaa49907c1c2e85f7abf
+    path: Assets/Deepanshu/Scenes1/Sample01.unity
+    guid: 417314bc099876f45b901add648d3d9f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 4a7ce7c7d258a9b499dceb74101cc13e, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Scrap : InteractionFoundation
 {
     public System.Action OnScrapCollected;
@@ -12,16 +11,11 @@ public class Scrap : InteractionFoundation
     private Renderer objectRenderer;
     [SerializeField]
     private Color[] colorList;
-    [SerializeField]
-    private float minInterval = 1f;
-    [SerializeField]
-    private float maxInterval = 3f;
+    [SerializeField] internal float minInterval = 1f;
+    [SerializeField] internal float maxInterval = 3f;
     [SerializeField]
     private GameObject greenRespawnPrefab;
-    
-    public int healthIncrease = 10;
     public int damage = 15;
-    
     private Material objectMaterial;
     private Color currentColor;
     private void Awake()

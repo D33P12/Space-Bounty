@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class NavScript : MonoBehaviour
 {
     [SerializeField] private Transform player; 
@@ -12,16 +11,13 @@ public class NavScript : MonoBehaviour
     private GameObject _closestScrap; 
     private float closestDistance; 
     private List<GameObject> spawnedScraps = new List<GameObject>();
-
     private void Update()
     {
         if (player == null || firstArrow == null || secondArrow == null) return;
-
         FindClosestScrap();
         UpdateArrowGuide(firstArrow);
         UpdateArrowGuide(secondArrow);
     }
-
     private void FindClosestScrap()
     {
         if (_closestScrap != null && closestDistance <= maxDistance)
@@ -85,7 +81,6 @@ public class NavScript : MonoBehaviour
                 arrow.gameObject.SetActive(false);
         }
     }
-
     public void RegisterPrefabSpawn(GameObject scrap)
     {
         if (!spawnedScraps.Contains(scrap))

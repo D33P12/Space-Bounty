@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ScrapSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> spawnableItems;

@@ -122,16 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf24dcd00ae13b499f6a20d74cd0273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrapValue: 10
   objectRenderer: {fileID: 0}
   colorList:
   - {r: 1, g: 0, b: 0, a: 0}
   - {r: 0.035300493, g: 1, b: 0, a: 0}
   minInterval: 1
-  maxInterval: 3
+  maxInterval: 2
   greenRespawnPrefab: {fileID: 3795649180960080094, guid: 2060f80fa38d21f4692e87d77f1b3e16, type: 3}
-  healthIncrease: 10
-  damage: 15
+  damage: 30
 --- !u!54 &-6499711767811186059
 Rigidbody:
   m_ObjectHideFlags: 0
