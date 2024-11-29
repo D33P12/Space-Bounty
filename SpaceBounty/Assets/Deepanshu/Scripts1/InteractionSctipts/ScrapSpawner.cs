@@ -3,15 +3,11 @@ using UnityEngine;
 
 public class ScrapSpawner : MonoBehaviour
 {
-  [SerializeField]
-    private List<GameObject> spawnableItems;
-    [SerializeField]
-    private List<Transform> spawnPoints;
-    [SerializeField]
-    private int maxSpawnCount = 5; 
-    [SerializeField]
-    private float minDistanceBetweenItems = 2f; 
-
+    [SerializeField] private List<GameObject> spawnableItems;
+    [SerializeField] private List<Transform> spawnPoints;
+    [SerializeField] private int maxSpawnCount = 5;
+    [SerializeField] private float minDistanceBetweenItems = 2f;
+    [SerializeField] private NavScript navScript;
     private List<GameObject> activeItems = new List<GameObject>(); 
     private void Start()
     {
@@ -33,7 +29,9 @@ public class ScrapSpawner : MonoBehaviour
             GameObject newItem = Instantiate(itemToSpawn, spawnPoint.position, Quaternion.identity);
 
             activeItems.Add(newItem);
-            Debug.Log("Spawned new item: " + newItem.name);
+            Debug.Log($"Spawned new item: {newItem.name}");
+
+            navScript?.RegisterPrefabSpawn(newItem);
 
             Scrap scrap = newItem.GetComponent<Scrap>();
             if (scrap != null)
@@ -56,8 +54,9 @@ public class ScrapSpawner : MonoBehaviour
     }
     private void HandleItemDestroyed(GameObject item, Transform spawnPoint)
     {
-        Debug.Log("Item destroyed: " + item.name);
+        Debug.Log($"Item destroyed: {item.name}");
         activeItems.Remove(item);
+        navScript?.UnregisterPrefab(item);
         Destroy(item);
         SpawnItemAt(spawnPoint);
     }
